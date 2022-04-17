@@ -1,30 +1,21 @@
-
-package Main;
-import characters.*;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package characters;
 import java.util.*;
-
-public class Tester {
-    public static void main(String args[]) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
-    {
-        Scanner sc = new Scanner(System.in);
-        String inp1,inp2;
-        System.out.println("Is your character Real or Fictional ?");
-        inp1 = sc.nextLine();
-        if ("Real".equalsIgnoreCase(inp1))
-        { 
-            
-        }
-        else if("Fictional".equalsIgnoreCase(inp1))
-        {
-           System.out.println("Is your character from an anime or series ?");
-           inp2 = sc.nextLine();
-           if ("Anime".equalsIgnoreCase(inp2))
-           {
-                Spec_Char Gojo= new Spec_Char(); 
+/**
+ *
+ * @author rajaa
+ */
+public class CreateCharacters {
+   public ArrayList<Spec_Char> selectionPool;
+    public CreateCharacters() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException{
+        Spec_Char Gojo= new Spec_Char(); 
                 String attr1[] = {"true","true","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"};
                 String att1[] = {"white","tall","M","adult","false","true","true","true","false","false","true","false"};
                 Gojo.createSpecChar(att1, attr1);
-                Gojo.printAnime();
+               // Gojo.printAnime();
 
 
                 Spec_Char Itadori= new Spec_Char(); 
@@ -71,16 +62,17 @@ public class Tester {
                 String att8[] = {"Black","Average","F","adult","true","false","true","true","true","false","false","false"};
                 Nezuko.createSpecChar(att8,attr8);
                 //Nezuko.printAnime();
-        
-           }
-           else if("Series".equalsIgnoreCase(inp2))
-           {
+                
+           Spec_Char Pool []= {
+             Gojo,Itadori,Fushiguro,Sukuna,Zenitsu,Tanjiro,Inosuke,Nezuko
+             };
+              
 
-           }
-           else 
-                System.out.println("Invalid entry!!");
-        }
-        else 
-            System.out.println("Invalid Entry!! Try Again");
-        
-}}
+                  selectionPool= new ArrayList<>(Arrays.asList(Pool));
+                  
+               //selectionPool[7].printAnime();
+                
+    
+}
+    }
+    

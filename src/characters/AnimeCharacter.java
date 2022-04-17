@@ -1,7 +1,6 @@
 package characters;
 
 import java.lang.reflect.Field;
-
 public class AnimeCharacter extends FictionalCharacter{
     
     public AnimeCharacter()
@@ -23,23 +22,41 @@ public class AnimeCharacter extends FictionalCharacter{
     public boolean blinds= false;
     public boolean mark= false;
     
-    public String genQuestions[]= {"What is the hair color of your character?",
-                                   "What is the height of your character ?",
-                                   "Is your character male or female ?" ,
-                                   "What is the age of your character ?",
-                                   "Does your character have any siblings ? ",
-                                   "Is your character human or not ?" ,                             
-                                   "Does your character have superpowers ? ",
-                                   "Is the character a fighter or not ?",
-                                   "Does your character have any deformities ?",
-                                   "Does the character wear mask ?",
-                                   "Does the character wear blinds ?",
-                                   "Does the character have any scar ?"};
+    
+    /*
+    What is your character's gender?
+    What is your character's hairColor?
+    What is your character's age?
+    Does your character have any siblings?
+    Is your character human?
+    Does your character have superpower?
+    Is your character a fighter?
+    What is your character's height?
+    Does your character have any
+    What is your character's
+    What is your character's
+    */
+    public String genAttributes[]= {"gender","hairColor","age","sibling","human","superpower","fighter",
+    "height","deformities","mask","blinds","mark"};
+    
+    public String genQuestions[]= {"Is your character male or female?" ,
+                                   "What is the hair color of your character?",
+                                   "What is the age of your character?",
+                                   "Does your character have any siblings? ",
+                                   "Is your character human or not?" ,                             
+                                   "Does your character have superpowers? ",
+                                   "Is the character a fighter or not?",
+                                   "What is the height of your character?",
+                                   "Does your character have any deformities?",
+                                   "Does the character wear mask?",
+                                   "Does the character wear blinds?",
+                                   "Does the character have any scar?"};
     
     
     public void changeAttribute(String fieldName, String value) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
     {
      this.getClass().getField(fieldName).set(this, value);   
+     
     }
     
     public void changeAttribute(String fieldName, boolean value) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
