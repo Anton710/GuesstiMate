@@ -5,6 +5,7 @@
 package Main;
 import characters.*;
 import java.util.*;
+import jdk.jshell.spi.SPIResolutionException;
 
 /**
  *
@@ -35,14 +36,18 @@ public class Tester2 {
                 AnimeCharacter ac= new AnimeCharacter();
                 Spec_Char temp = new Spec_Char();
                 CreateCharacters cc= new CreateCharacters();
-                System.out.println("here"+cc.selectionPool.get(0).age);
+                //System.out.println("here"+cc.selectionPool.get(0).age);
+                ArrayList<Spec_Char> sp = (ArrayList)cc.selectionPool.clone();
+                
                 boolean found = false;
                 
                 String max="";
                 int i = 0;
                 while(!found){
+                    HashMap<String,Integer> specify = new HashMap<String,Integer>();
                     if( i==ac.genQuestions.length-3){
                         temp.printAnime();
+                        System.out.println("remaining: "+ sp.size());
                         break;
                     }
                     else if(max.isEmpty()&& i!= ac.genQuestions.length-3){
@@ -59,7 +64,7 @@ public class Tester2 {
                         }
                         else if(type.equals("String"))
                         {
-                            System.out.println(" we are here sirji");
+                            
                             String input= sc.next();
                             temp.changeAttribute(test, input);
 
@@ -70,6 +75,41 @@ public class Tester2 {
                             temp.changeAttribute(test, input);
 
                         }
+                        for(Spec_Char c : cc.selectionPool){
+                            
+                            if( !temp.getClass().getField(test).get(temp).
+                                   toString().equalsIgnoreCase
+                                  (c.getClass().getField(test).get(c).toString())){
+                                
+                                sp.remove(c);
+                                if(sp.size()==1){
+                                    found = true;
+                                    System.out.println("Answer : ");
+                                    //sp.get(0).printAnime();
+                                    System.out.println(sp.get(0).name);
+                                    System.out.println(sp.get(0).animeName);
+                                    break;
+                                }
+                              
+                            }
+                            
+                        }
+                        for(Spec_Char c : sp){
+                            if( temp.getClass().getField(test).get(temp).
+                                   toString().equalsIgnoreCase
+                                  (c.getClass().getField(test).get(c).toString())){
+                            if(specify.containsKey(c.animeName)){
+                                    specify.put(c.animeName,specify.get(c.animeName)+1);
+                                }else{
+                                    specify.put(c.animeName,1);
+                                }
+                            }
+                        }
+                        for(String s : specify.keySet()){
+                            System.out.println( s + " "+ specify.get(s));
+                        }
+                        
+                        
                         i++;
                     }else{
                         

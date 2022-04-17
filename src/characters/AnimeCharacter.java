@@ -21,7 +21,8 @@ public class AnimeCharacter extends FictionalCharacter{
     public boolean mask= false;
     public boolean blinds= false;
     public boolean mark= false;
-    
+    public String name="";
+    public String animeName="";
     
     /*
     What is your character's gender?
@@ -37,7 +38,7 @@ public class AnimeCharacter extends FictionalCharacter{
     What is your character's
     */
     public String genAttributes[]= {"gender","hairColor","age","sibling","human","superpower","fighter",
-    "height","deformities","mask","blinds","mark"};
+    "height","deformities","mask","blinds","mark","name"};
     
     public String genQuestions[]= {"Is your character male or female?" ,
                                    "What is the hair color of your character?",
@@ -104,5 +105,8 @@ public class AnimeCharacter extends FictionalCharacter{
         this.mask= Boolean.parseBoolean(attributes[9]);
         this.blinds= Boolean.parseBoolean(attributes[10]);
         this.mark= Boolean.parseBoolean(attributes[11]);
+        this.name=attributes[12];
+        this.animeName=attributes[13];
+        
     }
 }
