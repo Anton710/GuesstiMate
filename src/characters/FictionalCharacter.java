@@ -16,6 +16,6 @@ public class FictionalCharacter extends RootCharacter{
     }
     
     boolean anime= false;
-    public boolean movie= false;
+    //public boolean movie= false;
     boolean series= false;
 }

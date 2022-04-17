@@ -22,7 +22,19 @@ public class AnimeCharacter extends FictionalCharacter{
     public boolean mask= false;
     public boolean blinds= false;
     public boolean mark= false;
-    public String genQuestions[]= {};
+    
+    public String genQuestions[]= {"What is the hair color of your character?",
+                                   "What is the height of your character ?",
+                                   "Is your character male or female ?" ,
+                                   "What is the age of your character ?",
+                                   "Does your character have any siblings ? ",
+                                   "Is your character human or not ?" ,                             
+                                   "Does your character have superpowers ? ",
+                                   "Is the character a fighter or not ?",
+                                   "Does your character have any deformities ?",
+                                   "Does the character wear mask ?",
+                                   "Does the character wear blinds ?",
+                                   "Does the character have any scar ?"};
     
     
     public void changeAttribute(String fieldName, String value) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
@@ -45,17 +57,22 @@ public class AnimeCharacter extends FictionalCharacter{
             this.getClass().getField(fieldName).set(this, value);
     }
     
-    public void printAnime() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
-    {
-      Field li[]= this.getClass().getFields();
-        for (Field li1 : li) {
-            String field= li1.toString();
-            int ind = field.lastIndexOf(".");
-            String member = field.substring(ind+1);
-            System.out.println(member + ": " + li1.get(this));
-        }
-    }
-    
+   public void printAnime() throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
+   {
+     Field li[]= this.getClass().getFields();
+       for(int i= 0;i<genQuestions.length; i++)
+           System.out.println(genQuestions[i]);
+      
+       for (Field li1 : li) {
+           String field= li1.toString();
+           int ind = field.lastIndexOf(".");
+           String member = field.substring(ind+1);
+           System.out.println(member + ": " + li1.get(this));
+       }
+      
+             
+   }
+//    
     public void createCharacter(String attributes[])
     {
         this.hairColor= attributes[0];
