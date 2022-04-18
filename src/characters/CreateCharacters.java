@@ -89,8 +89,80 @@ public class CreateCharacters {
                 Nezuko.createSpecChar(att8,attr8);
                 //Nezuko.printAnime();
                 
+                
+                Spec_Char Goku= new Spec_Char(); 
+                String attr9[] = {"Is your character's strongest form ultra instinct ? ",
+                                  "IS your character's signature move spirit bomb ? ",
+                                  "Is your character from Dragon Ball ?"};
+                String att9[] = {"Black","Tall","M","adult","true","true","true",
+                                 "true","false","Goku","DB"};
+                Goku.createSpecChar(att9,attr9);
+              
+                
+                Spec_Char Vegeta= new Spec_Char(); 
+                String attr10[] = {"Is your character's strongest form Ultra Ego ? ",
+                                  "IS your character's signature move final flash ? ",
+                                  "Is your character from Dragon Ball ?"};
+                String att10[] = {"Black","Tall","M","adult","true","true","true",
+                                 "true","false","Vegeta","DB"};
+                Vegeta.createSpecChar(att10,attr10);
+                
+                
+                Spec_Char Gohan= new Spec_Char(); 
+                String attr11[] = {"Is your character's strongest form Ultimate Gohan ? ",
+                                  "IS your character's signature move ka-me-ha-meha ? ",
+                                  "Is your character from Dragon Ball ?"};
+                String att11[] = {"Black","Tall","M","adult","true","true","true",
+                                 "true","false","Gohan","DB"};
+                Gohan.createSpecChar(att11,attr11);
+                
+                
+                Spec_Char Yamcha= new Spec_Char(); 
+                String attr12[] = {"Is your character good at baseball ? ",
+                                  "IS your character's signature move Fist of the Wolf Fang ? ",
+                                  "Is your character from Dragon Ball ?"};
+                String att12[] = {"Black","Tall","M","adult","false","true","true",
+                                "true","false","Yamcha","DB"};
+                Yamcha.createSpecChar(att12,attr12);
+                
+                
+                Spec_Char Horikita= new Spec_Char(); 
+                String attr13[] = {"Is your character the smartest ? ",
+                                  "Is your character anti-social ? ",
+                                  "Is your character from Classroom of the Elite ?"};
+                String att13[] = {"Black","Average","F","teen","true","true","false",
+                                 "false","false","Horikita","COE"};
+                Horikita.createSpecChar(att13,attr13);
+                
+                
+                Spec_Char Kushida= new Spec_Char(); 
+                String attr14[] = {"Does your character have dual nature ? ",
+                                  "IS your character overfriendly ? ",
+                                  "Is your character from Classroom of the Elite ?"};
+                String att14[] = {"Beige","Average","F","teen","false","true","false",
+                                 "false","false","Kushida","COE"};
+                Kushida.createSpecChar(att14,attr14);
+                  Kushida.printAnime();
+                
+                Spec_Char Karuizawa= new Spec_Char(); 
+                String attr15[] = {"Does the character have trust issues ? ",
+                                 "Does the character have poor academic performance ? ",
+                                  "Is your character from Classroom of the Elite ?"};
+                String att15[] = {"Blonde","Average","F","teen","false","true","false",
+                                 "false","false","Karuizawa","COE"};
+                Karuizawa.createSpecChar(att15,attr15);
+                
+                
+                Spec_Char Ichinose= new Spec_Char(); 
+                String attr16[] = {"IS your character richest in the class ? ",
+                                  "IS your character leader of class B? ",
+                                  "Is your character from Classroom of the Elite ?"};
+                String att16[] = {"Blonde","Average","F","teen","false","true","false",
+                                 "false","false","Ichinose","COE"};
+                Ichinose.createSpecChar(att16,attr16);
+                
            Spec_Char Pool []= {
-             Gojo,Itadori,Fushiguro,Sukuna,Zenitsu,Tanjiro,Inosuke,Nezuko
+             Gojo,Itadori,Fushiguro,Sukuna,Zenitsu,Tanjiro,Inosuke,Nezuko,Goku,Vegeta,Gohan,Yamcha,Horikita,Kushida,Karuizawa,Ichinose
              };
               
 
