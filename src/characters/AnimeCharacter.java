@@ -18,9 +18,6 @@ public class AnimeCharacter extends FictionalCharacter{
     public boolean superpower= true;
     public boolean fighter= true;
     public boolean deformities= false;
-    public boolean mask= false;
-    public boolean blinds= false;
-    public boolean mark= false;
     public String name="";
     public String animeName="";
     
@@ -38,7 +35,7 @@ public class AnimeCharacter extends FictionalCharacter{
     What is your character's
     */
     public String genAttributes[]= {"gender","hairColor","age","sibling","human","superpower","fighter",
-    "height","deformities","mask","blinds","mark","name"};
+    "height","deformities","name","animeName"};
     
     public String genQuestions[]= {"Is your character male or female?" ,
                                    "What is the hair color of your character?",
@@ -48,10 +45,7 @@ public class AnimeCharacter extends FictionalCharacter{
                                    "Does your character have superpowers? ",
                                    "Is the character a fighter or not?",
                                    "What is the height of your character?",
-                                   "Does your character have any deformities?",
-                                   "Does the character wear mask?",
-                                   "Does the character wear blinds?",
-                                   "Does the character have any scar?"};
+                                   "Does your character have any deformities?"};
     
     
     public void changeAttribute(String fieldName, String value) throws NoSuchFieldException, IllegalArgumentException, IllegalAccessException
@@ -102,11 +96,8 @@ public class AnimeCharacter extends FictionalCharacter{
         this.superpower= Boolean.parseBoolean(attributes[6]);
         this.fighter= Boolean.parseBoolean(attributes[7]);
         this.deformities= Boolean.parseBoolean(attributes[8]);
-        this.mask= Boolean.parseBoolean(attributes[9]);
-        this.blinds= Boolean.parseBoolean(attributes[10]);
-        this.mark= Boolean.parseBoolean(attributes[11]);
-        this.name=attributes[12];
-        this.animeName=attributes[13];
+        this.name=attributes[9];
+        this.animeName=attributes[10];
         
     }
 }

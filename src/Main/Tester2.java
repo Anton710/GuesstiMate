@@ -45,12 +45,12 @@ public class Tester2 {
                 int i = 0;
                 while(!found){
                     HashMap<String,Integer> specify = new HashMap<String,Integer>();
-                    if( i==ac.genQuestions.length-3){
+                    if( i==ac.genQuestions.length){
                         temp.printAnime();
                         System.out.println("remaining: "+ sp.size());
                         break;
                     }
-                    else if(max.isEmpty()&& i!= ac.genQuestions.length-3){
+                    else if(max.isEmpty()&& i!= ac.genQuestions.length){
                         System.out.println(ac.genQuestions[i]);
                         String test = ac.genAttributes[i];
                         String attribute=temp.getClass().getField(test).getType().toString();
@@ -83,6 +83,9 @@ public class Tester2 {
                                 
                                 sp.remove(c);
                                 if(sp.size()==1){
+                                    if( sp.get(0).getClass().getField(test).get(sp.get(0))
+                                        .toString().equalsIgnoreCase(temp.getClass().getField(test)
+                                                .get(temp).toString())){
                                     found = true;
                                     System.out.println("Answer : ");
                                     //sp.get(0).printAnime();
@@ -90,10 +93,17 @@ public class Tester2 {
                                     System.out.println(sp.get(0).animeName);
                                     break;
                                 }
+                                }
+                                if(sp.isEmpty()){
+                            found = true;
+                            System.out.println("No character found");
+                            break;
+                        }
                               
                             }
                             
                         }
+                        
                         for(Spec_Char c : sp){
                             if( temp.getClass().getField(test).get(temp).
                                    toString().equalsIgnoreCase
