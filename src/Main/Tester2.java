@@ -83,7 +83,7 @@ public class Tester2 {
                         if(found){
                             continue;
                         }
-                        
+                        if(!(sp.size()*1.0<=limit*cc.selectionPool.size())){
                         for(Spec_Char c : cc.selectionPool){
                             
                             if( !temp.getClass().getField(test).get(temp).
@@ -112,11 +112,10 @@ public class Tester2 {
                             }
                             
                         }
-                        
+                        }
+                       
                         // Hashmap of remaning entries fromn each anime w.r.t frequency
-                        
-                        
-                        
+                                                                    
                         for(Spec_Char c : sp){
                             if( temp.getClass().getField(test).get(temp).
                                    toString().equalsIgnoreCase
@@ -144,7 +143,7 @@ public class Tester2 {
                            
                            ArrayList<String> topAnimes = new ArrayList<String>();
                            
-                           for(int j=ar.length-1;(j >=ar.length-4 && j>=0);j--){
+                           for(int j=ar.length-1;(j >=ar.length-1 && j>=0);j--){
                                int index= arr1.indexOf(ar[j]);
                                topAnimes.add(arr2.get(index));
                            }
@@ -201,7 +200,7 @@ public class Tester2 {
                             
                             
                             }
-                                    
+                           limit /= 4;       
                         }
                         
                         
