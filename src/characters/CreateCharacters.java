@@ -94,7 +94,7 @@ public class CreateCharacters {
                 String attr9[] = {"Is your character's strongest form ultra instinct ? ",
                                   "IS your character's signature move spirit bomb ? ",
                                   "Is your character from Dragon Ball ?"};
-                String att9[] = {"Black","Tall","M","adult","true","true","true",
+                String att9[] = {"Black","Tall","M","adult","true","false","true",
                                  "true","false","Goku","DB"};
                 Goku.createSpecChar(att9,attr9);
               
@@ -103,7 +103,7 @@ public class CreateCharacters {
                 String attr10[] = {"Is your character's strongest form Ultra Ego ? ",
                                   "IS your character's signature move final flash ? ",
                                   "Is your character from Dragon Ball ?"};
-                String att10[] = {"Black","Tall","M","adult","true","true","true",
+                String att10[] = {"Black","average","M","adult","true","false","true",
                                  "true","false","Vegeta","DB"};
                 Vegeta.createSpecChar(att10,attr10);
                 
@@ -112,7 +112,7 @@ public class CreateCharacters {
                 String attr11[] = {"Is your character's strongest form Ultimate Gohan ? ",
                                   "IS your character's signature move ka-me-ha-meha ? ",
                                   "Is your character from Dragon Ball ?"};
-                String att11[] = {"Black","Tall","M","adult","true","true","true",
+                String att11[] = {"Black","Tall","M","adult","true","false","true",
                                  "true","false","Gohan","DB"};
                 Gohan.createSpecChar(att11,attr11);
                 
@@ -142,7 +142,7 @@ public class CreateCharacters {
                 String att14[] = {"Beige","Average","F","teen","false","true","false",
                                  "false","false","Kushida","COE"};
                 Kushida.createSpecChar(att14,attr14);
-                  Kushida.printAnime();
+                  //Kushida.printAnime();
                 
                 Spec_Char Karuizawa= new Spec_Char(); 
                 String attr15[] = {"Does the character have trust issues ? ",

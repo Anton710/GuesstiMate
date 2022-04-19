@@ -40,9 +40,11 @@ public class Tester2 {
                 ArrayList<Spec_Char> sp = (ArrayList)cc.selectionPool.clone();
                 
                 boolean found = false;
+                float limit = 0.4f;
                 
                 String max="";
                 int i = 0;
+                
                 while(!found){
                     HashMap<String,Integer> specify = new HashMap<String,Integer>();
                     if( i==ac.genQuestions.length){
@@ -75,6 +77,13 @@ public class Tester2 {
                             temp.changeAttribute(test, input);
 
                         }
+                        
+                        
+                        //////
+                        if(found){
+                            continue;
+                        }
+                        
                         for(Spec_Char c : cc.selectionPool){
                             
                             if( !temp.getClass().getField(test).get(temp).
@@ -104,6 +113,10 @@ public class Tester2 {
                             
                         }
                         
+                        // Hashmap of remaning entries fromn each anime w.r.t frequency
+                        
+                        
+                        
                         for(Spec_Char c : sp){
                             if( temp.getClass().getField(test).get(temp).
                                    toString().equalsIgnoreCase
@@ -118,6 +131,80 @@ public class Tester2 {
                         for(String s : specify.keySet()){
                             System.out.println( s + " "+ specify.get(s));
                         }
+                        
+                        // switch to specific q's based on max pool left 
+                        
+                        if(sp.size()*1.0<=limit*cc.selectionPool.size()){   
+                           Set<String> keySet = specify.keySet();
+                           Collection<Integer> values = specify.values();
+                           ArrayList<Integer> arr1= new ArrayList<Integer>(values);
+                           ArrayList<String> arr2= new ArrayList<String>(keySet);
+                           Object ar[]= arr1.toArray();
+                           Arrays.sort(ar);
+                           
+                           ArrayList<String> topAnimes = new ArrayList<String>();
+                           
+                           for(int j=ar.length-1;(j >=ar.length-4 && j>=0);j--){
+                               int index= arr1.indexOf(ar[j]);
+                               topAnimes.add(arr2.get(index));
+                           }
+                            
+                            for(int k=0;k<topAnimes.size();k++){
+                               ArrayList<Spec_Char> tempSpec = new ArrayList<Spec_Char>();
+                                for(Spec_Char spec : sp){
+                                    
+                                     if(spec.animeName.equals(topAnimes.get(k))){
+                                         System.out.println(spec.name);
+                                         tempSpec.add(spec);
+                                     }
+                               }
+                               String ques = tempSpec.get(0).specQuestion[2];
+                                System.out.println(ques);
+                                Boolean ans = sc.nextBoolean();
+                                if(ans){
+                                    for(Spec_Char spect : tempSpec){
+                                        String q1 = spect.specQuestion[0];
+                                        String q2 = spect.specQuestion[1];
+                                        System.out.println(q1);
+                                        Boolean ans1 = sc.nextBoolean();
+                                        if(!ans1){
+                                            sp.remove(spect);
+                                            
+                                            if(sp.isEmpty()){
+                                                System.out.println("not found");
+                                                return;
+                                            }
+                                            continue;
+                                        }
+                                        System.out.println(q2);
+                                        Boolean ans2 = sc.nextBoolean();
+                                        if(!ans2){
+                                            sp.remove(spect);
+                                            if(sp.isEmpty()){
+                                                System.out.println("not found");
+                                                return;
+                                            }
+                                            continue;
+                                        }
+                                        found = true;
+                                        System.out.println("character found: "+ spect.name);
+                                        break;
+                                    }
+                                }else{
+                                    for(Spec_Char spect : tempSpec){
+                                      sp.remove(spect);
+                                    }
+                                }
+                                if(found){
+                                    break;
+                                }
+                            
+                            
+                            }
+                                    
+                        }
+                        
+                        
                         
                         
                         i++;
